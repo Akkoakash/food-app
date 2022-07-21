@@ -96,7 +96,7 @@ const history = useHistory();
       <Route path="/foods"> 
   <FoodList />
       </Route>
-      <Route path="/">Welcome to the fovie app</Route>
+      <Route path="/">Welcome to the food app</Route>
       </Switch>
     </div>
     </div>
