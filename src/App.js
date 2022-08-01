@@ -7,7 +7,7 @@ import Toolbar from '@mui/material/Toolbar';
 import {Switch, Route, useHistory} from "react-router-dom";
 import { FoodList } from './FoodList';
 import { FoodDetails } from './FoodDetails';
-import SearchIcon from '@mui/icons-material/Search';
+
 
 export default function App() {
   const INITIAL_FOOD_LIST= [
@@ -85,6 +85,7 @@ const history = useHistory();
        <AppBar position="static">
         <Toolbar>
         <p className='heading'><b> Food Recipe-finder🍕 </b></p>
+        
         </Toolbar>
         </AppBar>
     
@@ -96,6 +97,7 @@ const history = useHistory();
       <Route path="/foods"> 
   <FoodList />
       </Route>
+      
       </Switch>
     </div>
     </div>
