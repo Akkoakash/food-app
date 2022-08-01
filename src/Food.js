@@ -1,4 +1,4 @@
-import { Button, Card, CardActions, CardContent } from '@mui/material';
+import { Card, CardActions, CardContent } from '@mui/material';
 import React from 'react';
 import { useState } from "react";
 import IconButton from '@mui/material/IconButton';
@@ -6,7 +6,7 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Counter } from './Counter';
 import { useHistory } from "react-router-dom";
-
+import InfoIcon from '@mui/icons-material/Info';
 
 export function Food({ name, poster, summary, deleteButton, id}) {
  
@@ -24,17 +24,17 @@ export function Food({ name, poster, summary, deleteButton, id}) {
               aria-label="Toggle summary">
               {show ? <ExpandLessIcon /> : <ExpandMoreIcon />}
             </IconButton>
-            </h2>
-        </div>
-        {show ? <p className="food-summary">{summary}</p> : ""}
-           <div className='procedure-container'>
+
             <IconButton
               color="primary"
               onClick={() => history.push(`/foods/${id}`)}
               aria-label="Toggle summary">
-                <Button><b>Procedure</b></Button>
+                <InfoIcon/>
               </IconButton>
-              </div> 
+        </h2>
+        </div>
+        {show ? <p className="food-summary">{summary}</p> : ""}
+     
       </CardContent>
       <CardActions>
        <Counter/>{deleteButton}
