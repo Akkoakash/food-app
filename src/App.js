@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-//import TopBar from './TopBar';
 import "./App.css";
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
+//import Button from '@mui/material/Button';
 import {Switch, Route, useHistory} from "react-router-dom";
 import { FoodList } from './FoodList';
 import { FoodDetails } from './FoodDetails';
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function App() {
   const INITIAL_FOOD_LIST= [
@@ -83,11 +83,9 @@ const history = useHistory();
     <div className="App">
        <AppBar position="static">
         <Toolbar>
-        <Button color="inherit" onClick={()=>history.push("/")}>Home</Button>
-        <Button color="inherit" onClick={()=>history.push("/foods")}>Foods</Button>
+        <p className='heading'><b> Food Recipe-finder🍕 </b></p>
         </Toolbar>
         </AppBar>
-    
         <div className="route-container">
     <Switch>
     <Route path="/foods/:id"> 
@@ -96,7 +94,6 @@ const history = useHistory();
       <Route path="/foods"> 
   <FoodList />
       </Route>
-      <Route path="/">Welcome to the food app</Route>
       </Switch>
     </div>
     </div>

@@ -3,9 +3,29 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { useEffect, useState } from "react";
 import { API } from "./global";
+import { TextField } from '@mui/material';
 
 export function FoodList(){
     const [foodList, setFoodList] = useState([]);
+    
+
+    const search = (searchText) => {
+
+      if(searchText==""){ getFoods(); }
+      else{
+        const FilterList = foodList.filter(row => {
+          const rowValue = row["name"]
+          return rowValue !== undefined
+            ? String(rowValue)
+                .toLowerCase()
+                .startsWith(String(searchText).toLowerCase())
+            : true
+        });
+    
+        setFoodList(FilterList);
+      }
+    }
+    
     const getFoods = () => {
       fetch(`${API}/foods`,{
     method: "GET",
@@ -22,7 +42,10 @@ const deleteFood = (id) => {
 };
 
 return(
-<div className='food-list'>
+  <div className='seachbar'>
+     <TextField onChange={(event) => search(event.target.value)} label="Search" variant="outlined" />
+  
+<div className='food-list'> 
     {foodList.map(({name, poster, summary, id}, index)=>(
       <Food
       key={index}
@@ -41,6 +64,7 @@ return(
       id={id}
       />
     ))}
+  </div>
   </div>
   );
 }

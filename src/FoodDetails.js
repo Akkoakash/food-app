@@ -4,7 +4,6 @@ import { useHistory, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { API } from './global';
 
-
 export function FoodDetails() {
   const { id } = useParams();
   const [food, setFood] = useState({});
