@@ -85,15 +85,6 @@ const history = useHistory();
        <AppBar position="static">
         <Toolbar>
         <p className='heading'><b> Food Recipe-finder🍕 </b></p>
-        <div className="topbarCenter">
-        <div className="searchbar">
-          <input
-            placeholder="Search for friend, post or video"
-            className="searchInput"
-          />
-           <SearchIcon className="searchIcon" />
-        </div>
-        </div>
         </Toolbar>
         </AppBar>
     
